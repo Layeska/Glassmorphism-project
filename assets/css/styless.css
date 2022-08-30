@@ -127,7 +127,6 @@ body {
 
 .card:hover { transform: translateY(-10px); }
 
-.card:hover .headCard img { transform: scale(1.1); }
 
 .headCard {
     width: 100%;
