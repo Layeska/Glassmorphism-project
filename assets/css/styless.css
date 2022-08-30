@@ -125,8 +125,10 @@ body {
     transition: all 300ms;
 }
 
-.card:hover { transform: translateY(-10px); }
-
+.card:hover { 
+    transform: translateY(-10px); 
+    transition-duration: 1s, 2s, 1s, 2s;
+}
 
 .headCard {
     width: 100%;
