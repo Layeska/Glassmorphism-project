@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,100;1,200;1,300;1,400;1,600&display=swap');
+
+:root {
+    --colorText: rgb(250, 237, 205);
+    --bgHTML: rgb(0, 0, 0);
+    --bg-card: rgba(255, 255, 255, 0.1);
+    --color-border-card: rgba(255, 255, 255, 0.5);
+    --color-active: rgb(255, 0, 0, 1);
+}
+
+body {
+    font-family: 'Barlow', sans-serif;
+    color: var(--colorText);
+    background: var(--bgHTML);
+}
+
+.container-gb-square {
+    max-width: 1200px;
+    height: 600px;
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.square {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
+
+.square1 {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(to left, #22c1c3, #fdbb2d);
+    right: 100px;
+    top: 150px;
+    animation: t1 8s ease infinite;
+}
+
+.square2 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(to left, #ee8105, #c7371e );
+    top: 350px;
+    animation: t2 9s ease infinite;
+}
+
+.square3 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(to left, #cf5c66, #665ccf);
+    left: 200px;
+    animation: t3 7s ease infinite;
+}
+
+@keyframes t1 {
+    0% {
+        transform: rotate(45deg) translateY(0px);
+    }
+
+    50% {
+        transform:  rotate(45deg) translateY(20px);
+    }
+
+    100% {
+        transform: rotate(45deg) translateY(0px);
+    }
+}
+
+@keyframes t2 {
+    0% {
+        transform: rotate(65deg) translateY(0px);
+    }
+
+    50% {
+        transform: rotate(65deg) translateY(20px);
+    }
+
+    100% {
+        transform: rotate(65deg) translateY(0px);
+    }
+}
+
+@keyframes t3 {
+    0% {
+        transform: rotate(105deg) translateY(0px);
+    }
+
+    50% {
+        transform: rotate(105deg) translateY(20px);
+    }
+
+    100% {
+        transform: rotate(105deg) translateY(0px);
+    }
+}
+
+
+/*-- Contenedor central de las cards --*/
+.containerCards {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    width: 300px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    background: var(--bg-card);
+    border-left: 1px solid var(--color-border-card);
+    border-top: 1px solid var(--color-border-card);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    --webkit-backdrop-filter: blur(5px);
+    transition: all 300ms;
+}
+
+.card:hover { transform: translateY(-10px); }
+
+.card:hover .headCard img { transform: scale(1.1); }
+
+.headCard {
+    width: 100%;
+    height: 180px;
+}
+
+.headCard img {
+    width: 250px;
+    height: 200px;
+    margin-left: 10%;
+    border-radius: 14px;
+    transform: all 100ms;
+}
+
+.card h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 30px;
+    text-align: center;
+    color: var(--colorText);
+}
+
+.card p {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--colorText);
+    letter-spacing: 0.5px;
+}
+
+.card hr {
+    margin-top: 30px;
+    border: solid 0.1px;
+    height: 0.1px;
+    color: var(--bg-card)
+}
+
+.footerCard {
+    margin-top: 10px;
+    display: flex;
+    color: var(--colorText);
+    justify-content: space-between;
+}
+
+.footerCard h3 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.footerCard .userChange {
+    background: transparent;
+    border: none;
+    margin-top: 15px;
+    margin-right: 45px;
+    width: 25px;
+    height: 35px;
+}
+
+.userChange:hover { transform: scale(1.4); }
+
+.userChange:active { color: var(--color-active); }
+
+.footerCard i { margin-top: 15px; }
+
+@media screen and (max-width: 1200px) {
+    .containerCards {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin-top: 100px;
+        padding-bottom: 100px;
+    }
+}
